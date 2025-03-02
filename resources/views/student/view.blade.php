@@ -22,16 +22,8 @@
                   <table class="table table-striped">
                     <tbody>
                       <tr>
-                        <td><b>First Name:</b></td>
-                        <td>{{ $studentInfo->first_name }}</td>
-                      </tr>
-                      <tr>
-                        <td><b>Middle Name:</b></td>
-                        <td>{{ $studentInfo->middle_name }}</td>
-                      </tr>
-                      <tr>
-                        <td><b>Last Name:</b></td>
-                        <td>{{ $studentInfo->last_name }}</td>
+                        <td><b>Name:</b></td>
+                        <td>{{ $studentInfo->name }}</td>
                       </tr>
                       <tr>
                         <td><b>Gender</b></td>
