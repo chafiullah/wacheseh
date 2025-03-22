@@ -1,19 +1,5 @@
-  {{--School information  --}}
-  <div class="col-lg-4 col-md-4 col-sm-4">
-    @foreach (config('constant.report_card_left') as $item)
-      <span>{{$item}}</span> <br>
-    @endforeach
-      <span>{{env('APP_NAME')}}</span> <br>
-  </div>
-  <div class="col-lg-4 col-md-4 col-sm-4 text-center">
-    <img src="{{ asset('/images/main_logo.png') }}" alt="main-logo" height="200" width="200" style="margin-top:-2%">
-  </div>
-  <div class="col-lg-4 col-md-4 col-sm-4">
-    @foreach (config('constant.report_card_right') as $item)
-      <span>{{$item}}</span> <br>
-    @endforeach
-    <span>{{env('APP_NAME')}}</span> <br>
-  </div>
+{{-- The header which is different from school to school --}}
+@import('academic.components.header.blessed2')
   {{-- Heading and Semester Title --}}
   <div class="col-md-12">
     <h1 class="text-center px-3 pt-3">
