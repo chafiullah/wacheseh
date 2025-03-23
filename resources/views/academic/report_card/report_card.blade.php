@@ -17,14 +17,14 @@
             @include('academic.components.banner')
             {{-- Marking and Others --}}
             @include('academic.components.marks')
-            {{-- Last page of the transcript --}}
-            @include('academic.components.last_page')
+            {{-- honors and behavior details --}}
+            @include('academic.components.honor')
+            {{-- Signatures --}}
+            @include('academic.components.signatures')
         </div>
     </div>
-    {{-- honors and behavior details --}}
-    @include('academic.components.honor')
-    {{-- Signatures --}}
-    @include('academic.components.signatures')
+    {{-- Last page of the transcript --}}
+    @include('academic.components.last_page')
     {{-- scripts --}}
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
