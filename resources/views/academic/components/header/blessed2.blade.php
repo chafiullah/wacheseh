@@ -9,7 +9,7 @@
 </div>
 
 <div class="col-lg-4 col-md-4 col-sm-4 text-center">
-    <img src="{{ asset('/images/main_logo.png') }}" alt="main-logo" height="120" width="150" style="margin-top:-2%">
+    <img src="{{ asset('/images/main_logo.png') }}" alt="main-logo" height="150" width="120" style="margin-top:-2%">
 </div>
 
 <div class="col-lg-4 col-md-4 col-sm-4">

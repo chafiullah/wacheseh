@@ -2,7 +2,7 @@
 <div class="col-md-12">
     <table class="table table-bordered">
         <thead>
-            <tr class="text-center">
+            <tr>
                 <th colspan="4">Student Performance</th>
             </tr>
         </thead>
@@ -77,7 +77,7 @@
 <div class="col-md-12">
     <table class="table table-bordered">
         <thead>
-            <tr class="text-center">
+            <tr>
                 <th colspan="4">Student Discipline</th>
             </tr>
         </thead>

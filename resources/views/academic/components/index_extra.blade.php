@@ -1,38 +1,31 @@
-<div class="form-group col-sm-12 col-md-4">
-    <label>Unjustified Abs. (No  of hrs.):</label>
+<div class="form-group col-sm-12 col-md-4"> y
+    <label>Unjustified Abs. (No of hrs.):</label>
     <input type="text" class="form-control" name="un_absent">
 </div>
-
 <div class="form-group col-sm-12 col-md-4">
-    <label>Justified Abs (No  of hrs.):</label>
-    <input type="text" class="form-control" name="absent">
-</div>
-<div class="form-group col-sm-12 col-md-4">
-    <label>Late (No of times):</label>
+    <label>Late (No of Hours):</label>y
     <input type="text" class="form-control" name="late">
 </div>
-<div class="form-group col-sm-12 col-md-4">
-    <label>Punishment (No  of hrs.):</label>
-    <input type="text" class="form-control" name="punishment">
-</div>
-<div class="form-group col-sm-12 col-md-4">
+<div class="form-group col-sm-12 col-md-4">y
     <label>Conduct Warning:</label>
     <input type="text" class="form-control" name="warning">
 </div>
-<div class="form-group col-sm-12 col-md-4">
+
+<div class="form-group col-sm-12 col-md-4">y
     <label>Reprimand:</label>
     <input type="text" class="form-control" name="reprimand">
 </div>
-<div class="form-group col-sm-12 col-md-6">
+<div class="form-group col-sm-12 col-md-4">y
     <label>Suspension:</label>
     <input type="text" class="form-control" name="suspension">
 </div>
-<div class="form-group col-sm-12 col-md-6">
+<div class="form-group col-sm-12 col-md-4">y
     <label>Class Master:</label>
     <input type="text" class="form-control" name="class_master">
 </div>
-<div class="form-group col-sm-12 col-md-12">
+<div class="form-group col-sm-12 col-md-12">y
     <label>Remarks on student performance:</label> <br>
-    <small class="text-info">Try not to make it long otherwise the design breaks,we can't help it. Max suggestion is 20 letters.</small>
+    <small class="text-info">Try not to make it long otherwise the design breaks,we can't help it. Max suggestion is 20
+        letters.</small>
     <textarea class="form-control" name="remarks"> </textarea>
 </div>
