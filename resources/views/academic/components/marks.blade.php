@@ -11,7 +11,7 @@
               <th>AV x coef</th>
               <th>GRADE</th>
               <th>Remarks</th>
-              <th>Signature</th>
+              <th>Teacher</th>
           </tr>
       </thead>
       <tbody>

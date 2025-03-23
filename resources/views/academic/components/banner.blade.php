@@ -1,5 +1,5 @@
 {{-- The header which is different from school to school --}}
-@import('academic.components.header.blessed2')
+@include('academic.components.header.blessed2')
   {{-- Heading and Semester Title --}}
   <div class="col-md-12">
     <h1 class="text-center px-3 pt-3">
@@ -43,18 +43,6 @@
       <tr>
           <th>DOB</th>
           <td>{{Carbon::parse($student->dob)->format('d M Y')}}</td>
-          <th>Enrolment</th>
-          <td>{{Carbon::parse($student->admission_date)->format('d M Y')}}</td>
-      </tr>
-      <tr>
-          <th>Matricule</th>
-          <td>{{$student->student_id}}</td>
-          <th>No. of subjects</th>
-          <td></td>
-      </tr>
-      <tr>
-          <th>Parent’s Name</th>
-          <td>{{$student->legal_guidance}}</td>
           <th>No. of subjects passed</th>
           @if ($semester != config('constant.annual'))
             <td>{{$marks->where('grade', '!=', 'D')->count()}}</td>
@@ -67,8 +55,8 @@
           @endif
       </tr>
       <tr>
-          <th>Parent’s Contact</th>
-          <td>{{$student->guidance_phone}}</td>
+          <th>Matricule</th>
+          <td>{{$student->student_id}}</td>
           <th>Class master</th>
           <td>{{$additional_data['class_master']}}</td>
       </tr>

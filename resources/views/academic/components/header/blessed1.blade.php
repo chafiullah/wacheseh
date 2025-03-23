@@ -1,12 +1,11 @@
-
 {{--School information  --}}
 <div class="col-lg-4 col-md-4 col-sm-4">
 {{-- The school information on the left of the report card --}}
-    <span class="header-text">Blessed Anglo-Saxon High School (BASHS) Prestige Simbock</span>
+    <span class="header-text">Blessed Anglo-Saxon Comprehensive High School (BASCHS)</span>
     <span class="header-text">Discipline - Hard Work - Success. With Jesus At The Centre</span>
-    <span class="header-text">Tel: 676161387, 670090053, 674975975, 677366101</span>
-    <span class="header-text">E-mail: blessedsimbockcollege@gmail.com</span>
-    <span class="header-text">P.O. Box 1839 Simbock - Yaounde</span>
+    <span class="header-text">Tel: 674975975, 677366101, 652994949, 677558832</span>
+    <span class="header-text">Email: blessedcomprehensivecollege@yahoo.com</span>
+    <span class="header-text">Nomayos II (Ancien Rail) | P.O. Box 1839 Nomayos Yaounde</span>
 </div>
 
 <div class="col-lg-4 col-md-4 col-sm-4 text-center">
