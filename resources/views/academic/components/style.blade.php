@@ -31,8 +31,9 @@
         display: flex;
         justify-content: space-between;
         width: 100%;
-        margin-top: 20px;
-        font-size: 16px
+        margin-top: 50px;
+        font-size: 16px;
+        font-weight: bold;
     }
 
     @media print {
