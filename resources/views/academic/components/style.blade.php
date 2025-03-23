@@ -31,7 +31,7 @@
         display: flex;
         justify-content: space-between;
         width: 100%;
-        margin-top: 50px;
+        margin-top: 150px;
         font-size: 16px;
         font-weight: bold;
     }
