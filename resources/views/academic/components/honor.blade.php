@@ -1,7 +1,7 @@
 {{-- Honor System --}}
 <div class="container-fluid .page-break">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
             <table class="table table-bordered">
                 <thead>
                     <tr class="text-center">
@@ -108,7 +108,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-12">
             <table class="table table-bordered">
                 <thead>
                     <tr class="text-center">
