@@ -78,7 +78,7 @@
     <table class="table table-bordered">
         <thead>
             <tr class="text-center">
-                <th colspan="4">Discipline</th>
+                <th colspan="4">Student Discipline</th>
             </tr>
         </thead>
         <tbody>
