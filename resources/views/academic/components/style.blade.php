@@ -27,6 +27,14 @@
         font-weight: bold;
     }
 
+    .signature-block {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 20px;
+        font-size: 16px
+    }
+
     @media print {
         .page-break {
             page-break-after: always;
