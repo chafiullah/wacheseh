@@ -34,7 +34,7 @@
                         <td>{{ (($item->n1_mark + $item->n2_mark) / 2) * $item->course_id->coefficient }}</td>
                         <td>{{ $item->grade }}</td>
                         <td>{{ $item->remark }}</td>
-                        <td>{{ $item->signature }}</td>
+                        <td>{{ Str::title(Str::lower($item->signature)) }}</td>
                     </tr>
                 @endforeach
             </tbody>
@@ -51,7 +51,7 @@
                     <th>COEF</th>
                     <th>AV x Coef</th>
                     <th>Remarks</th>
-                    <th>Teacher's Signature</th>
+                    <th>Teacher</th>
                 </tr>
             </thead>
             <tbody>
@@ -65,7 +65,7 @@
                         <td>{{ $grade['coef'] }}</td>
                         <td>{{ $grade['av_coef'] }}</td>
                         <td>{{ $grade['remark'] }}</td>
-                        <td>{{ $grade['signature'] }}</td>
+                        <td>{{ Str::title(Str::lower($grade['signature'])) }}</td>
                     </tr>
                 @endforeach
                 <tr>
