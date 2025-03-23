@@ -33,14 +33,14 @@
             </tr>
             {{-- Total Coef. and Position --}}
             <tr>
-                <td rowspan="2">
+                <td>
                     @if ($semester != config('constant.annual'))
                         Total Coef.
                     @else
                         Annual Coef.
                     @endif
                 </td>
-                <td rowspan="2">
+                <td>
                     @if ($semester != config('constant.annual'))
                         {{ $marks->sum('course_id.coefficient') }}
                     @else
@@ -57,16 +57,16 @@
             </tr>
             {{-- Term Average and Remark --}}
             <tr>
-                <td rowspan="2">Term Avg.</td>
-                <td rowspan="2">
+                <td>Term Avg.</td>
+                <td>
                     {{ $results->term_average }}
                 </td>
                 <td>Remark</td>
                 <td>
                     @if ($semester != config('constant.annual'))
-                        {{ Helper::calculate_average_grade($results->term_average)[1] }}
+                        {{ Helper::calculate_average_grade($results->term_average)[2] }}
                     @else
-                        {{ Helper::calculate_average_grade(array_sum(array_column($annual_grades, 'average')))[1] }}
+                        {{ Helper::calculate_average_grade(array_sum(array_column($annual_grades, 'average')))[2] }}
                     @endif
                 </td>
             </tr>
@@ -99,8 +99,8 @@
                 <td>{{ $additional_data['reprimand'] }}</td>
             </tr>
             <tr>
-                <td rowspan="2">Suspension</td>
-                <td rowspan="2">{{ $additional_data['suspension'] }}</td>
+                <td>Suspension</td>
+                <td>{{ $additional_data['suspension'] }}</td>
             </tr>
             @if ($semester != config('constant.annual'))
                 <tr>
