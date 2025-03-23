@@ -2,10 +2,10 @@
 <div class="col-lg-5 col-md-5 col-sm-12">
     {{-- The school information on the left of the report card --}}
     <span class="header-text">Blessed Anglo-Saxon Comprehensive High School (BASCHS)</span> <br>
-    <span class="header-text">Discipline - Hard Work - Success. With Jesus At The Centre</span> <br>
-    <span class="header-text">Tel: 674975975, 677366101, 652994949, 677558832</span> <br>
+    <span class="header-text">Discipline - Hard Work - Success. <br> With Jesus At The Centre</span> <br>
+    <span class="header-text">Tel: 674975975, 677366101 <br> 652994949, 677558832</span> <br>
     <span class="header-text">Email: blessedcomprehensivecollege@yahoo.com</span> <br>
-    <span class="header-text">Nomayos II (Ancien Rail) | P.O. Box 1839 Nomayos Yaounde</span>
+    <span class="header-text">Nomayos II (Ancien Rail) <br> P.O. Box 1839 Nomayos Yaounde</span>
 </div>
 
 <div class="col-lg-2 col-md-2 col-sm-12 text-center">

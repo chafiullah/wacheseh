@@ -2,8 +2,8 @@
 <div class="col-lg-5 col-md-5 col-sm-12">
     {{-- The school information on the left of the report card --}}
     <span class="header-text">Blessed Anglo-Saxon High School (BASHS) Prestige Simbock</span><br>
-    <span class="header-text">Discipline - Hard Work - Success. With Jesus At The Centre</span><br>
-    <span class="header-text">Tel: 676161387, 670090053, 674975975, 677366101</span><br>
+    <span class="header-text">Discipline - Hard Work - Success <br> With Jesus At The Centre</span><br>
+    <span class="header-text">Tel: 676161387, 670090053 <br> 674975975, 677366101</span><br>
     <span class="header-text">E-mail: blessedsimbockcollege@gmail.com</span><br>
     <span class="header-text">P.O. Box 1839 Simbock - Yaounde</span>
 </div>
