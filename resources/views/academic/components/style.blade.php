@@ -27,6 +27,11 @@
         font-weight: bold;
     }
 
+    .report-card-container {
+        border: 2px solid #000;
+        min-height: 100vh;
+    }
+
     .signature-block {
         display: flex;
         justify-content: space-between;

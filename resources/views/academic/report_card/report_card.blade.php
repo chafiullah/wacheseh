@@ -11,8 +11,8 @@
 </head>
 
 <body>
-    <div class="container-fluid page-break">
-        <div class="row mt-2">
+    <div class="container-fluid page-break report-card-container">
+        <div class="row mt-2 p-2">
             {{-- banner --}}
             @include('academic.components.banner')
             {{-- Marking and Others --}}

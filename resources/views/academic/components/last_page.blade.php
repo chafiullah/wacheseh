@@ -1,5 +1,5 @@
 {{-- Grading System --}}
-<div class="container-fluid .page-break">
+<div class="container-fluid .page-break report-card-container">
     <div class="row">
         <div class="col-md-12">
             <table class="table table-bordered">
