@@ -16,6 +16,6 @@
     {{-- The school information on the right of the report card --}}
     <span class="header-text">REPUBLIC OF CAMEROON</span><br>
     <span class="header-text">Ministry Of Secondary Education</span><br>
-    <span class="header-text">Regional Delegation Of Secondary Education</span><br>
-    <span class="header-text">Divisional Delegation Secondary Education</span>
+    <span class="header-text">Regional Delegation of the Centre</span> <br>
+    <span class="header-text">Divisional Delegation of Mefou and Akono</span>
 </div>
