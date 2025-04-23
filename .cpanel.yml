@@ -1,15 +1,19 @@
 ---
 deployment:
-  # cPanel will deploy whatever branch you've selected in the Git Version Control interface—
-  # make sure that's set to "main"
   tasks:
-    # 1. point to your repo and your web‐root
+    # your repo root
     - export REPO_DIR=/home/wachoqfr/repository/core
-    - export DEPLOY_DIR=/home/wachoqfr/blessed1.wacheseh.com
 
-    # 2. rsync everything except the .git folder and this yaml file itself,
-    #    removing any files in the dest that were deleted from the repo
+    # first target
+    - export DEPLOY_DIR1=/home/wachoqfr/blessed1.wacheseh.com
     - rsync -av --delete-after \
       --exclude='.git' \
       --exclude='.cpanel.yml' \
-      "$REPO_DIR"/ "$DEPLOY_DIR"/
+      "$REPO_DIR"/ "$DEPLOY_DIR1"/
+
+    # second target
+    - export DEPLOY_DIR2=/home/wachoqfr/blessed2.wacheseh.com
+    - rsync -av --delete-after \
+      --exclude='.git' \
+      --exclude='.cpanel.yml' \
+      "$REPO_DIR"/ "$DEPLOY_DIR2"/
