@@ -66,8 +66,8 @@ class StudentInfoImport implements ToModel, WithHeadingRow, WithValidation
     public function customValidationMessages(): array
     {
         return [
-            'admission_date.string' => 'Admission date validation field failed, the date must be present and presented as a string, so check your excel file if you have convereted the column as text.',
-            'date_of_birth.string' => 'Date of Birth date validation field failed, the date must be present and presented as a string, so check your excel file if you have convereted the column as text.',
+            'admission_date.string' => 'Admission date validation field failed, the date must be present and presented as a string, so check your excel file if you have converted the column as text.',
+            'date_of_birth.string' => 'Date of Birth date validation field failed, the date must be present and presented as a string, so check your excel file if you have converted the column as text.',
         ];
     }
 }

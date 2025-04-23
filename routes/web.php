@@ -37,7 +37,7 @@ Route::get('clear', function () {
 });
 Route::get('test', function () {
     return "Perform test operation";
-    
+
 });
 Route::group(['prefix' => 'account-recovery'], function () {
     Route::post('send-otp', 'PasswordResetController@send_otp')->name('send.otp');
@@ -88,7 +88,7 @@ Route::group(['prefix' => '/admin', 'middleware' => 'auth'], function () {
      * */
     Route::get('/studentinfo/delete/{id}', 'StudentInfoController@delete')->name('studentinfo.delete');
     // student resource routes
-    Route::resource('studentInfo', 'StudentInfoController');
+    Route::resource('studentInfo', 'StudentInfoController')->except(['delete']);
     Route::get('student/comment/index/{studentInfo}','StudentInfoController@indexComment')->name('student.comment.index');
     Route::post('student/comment/add','StudentInfoController@addComment')->name('student.comment.store');
     Route::get('student/comment/delete/{id}','StudentInfoController@deleteComment')->name('student.comment.delete');
@@ -206,7 +206,7 @@ Route::group(['prefix' => '/admin', 'middleware' => 'auth'], function () {
     // Subjects to course outlines
     Route::patch('program-outline/{outline}/subjects',[Department_Controller::class, 'programOutlineSubjects'])->name('programsoutline.subjects');
     Route::patch('program-outline/{outline}/years',[Department_Controller::class, 'programOutlineAcademicYears'])->name('programsoutline.years');
-    
+
 
     Route::match(['put', 'patch'], 'program-instruction/update/{studentExam}', [Department_Controller::class, 'program_instruction_update'])->name('programs.instruction.update');
     // Event Types

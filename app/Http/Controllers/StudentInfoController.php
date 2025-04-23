@@ -216,6 +216,16 @@ class StudentInfoController extends Controller
     }
   }
 
+  public function delete(StudentInfo $studentInfo)
+    {
+        try {
+            $studentInfo->delete();
+            toastr()->success('Information updated successfully', 'Success');
+            return redirect()->route('studentInfo.index');
+        } catch (Throwable $th) {
+            return $th->getMessage();
+        }
+    }
   /**
    * Remove the specified resource from storage.
    *
@@ -359,7 +369,7 @@ class StudentInfoController extends Controller
   }
 
   public function studentPromote(Request $request){
-      // return $request; 
+      // return $request;
       try {
           foreach ($request->input('students') as $student){
             PromoteStudent::updateOrCreate(

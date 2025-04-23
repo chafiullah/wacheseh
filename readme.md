@@ -5,3 +5,6 @@ In this version the report card has been revised again. The headers are now more
 # Version 2025.3.03
 
 In this version the report card has been revised again. Added borders to all the pages.
+
+# Version 2025.04.23
+In this version we added the **name** as a unique entry for the **student_infos** table. Added the student delete option, from the all student list where users with proper authorization cal delete students.  
