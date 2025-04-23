@@ -88,7 +88,7 @@
 
                         @permission('edit-student-profile')
                           <a href="{{ route('studentInfo.edit', $student->id) }}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
-                          <a href="{{ route('studentInfo.edit', $student->id) }}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure to remove this student?')"><i class="fa fa-trash"></i></a>
+                          <a href="{{ route('studentinfo.delete', $student->id) }}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure to remove this student?')"><i class="fa fa-trash"></i></a>
                         @endpermission
                         @permission('add-comment')
                           <a href="{{ route('student.comment.index', $student->id) }}" class="btn btn-info btn-sm"><i class="fa fa-comment"></i></a>
