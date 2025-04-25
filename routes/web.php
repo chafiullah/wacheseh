@@ -138,6 +138,14 @@ Route::group(['prefix' => '/admin', 'middleware' => 'auth'], function () {
     Route::get('mark-import', 'ImportMarkController@upload')->name('mark.import.index');
     Route::post('mark-import/generate-list', 'ImportMarkController@generateList')->name('mark.import.generate');
     Route::post('mark-import', 'ImportMarkController@import_mark')->name('mark.import');
+    /**
+     * Additional data input routes to generate bulk report card
+     */
+    Route::get('result/additional-data','AcademicTranscriptController@additionalDataIndex')->name('additional_data.index');
+    Route::post('result/additional-data','AcademicTranscriptController@additionalDataStore')->name('additional_data.store');
+    Route::post('result/additional-data/import','AcademicTranscriptController@additionalDataImport')->name('additional_data.import');
+    Route::get('result/additional-data/{result_compliment}/delete','AcademicTranscriptController@additionalDataDelete')->name('additional_data.delete');
+    Route::post('result/additional-data/list','AcademicTranscriptController@additionalDataList')->name('additional_data.list');
     // Ajax Routes for Marks Management
     Route::get('get-students-by-class', 'MarkController@get_students_by_class')->name('get-student.list');
     Route::get('get-courses-by-outline', 'MarkController@get_courses_by_outline')->name('get-courses-by-outline.list');
@@ -152,6 +160,8 @@ Route::group(['prefix' => '/admin', 'middleware' => 'auth'], function () {
     Route::group(['prefix' => 'academic-record', 'as' => 'academic.'], function () {
         Route::get('report-card', 'AcademicTranscriptController@report_card_index')->name('report-card.index');
         Route::post('report-card/generate', 'AcademicTranscriptController@report_card_generate')->name('report-card.generate');
+        Route::post('report-card/refresh/results', 'AcademicTranscriptController@refreshResults')->name('results.refresh');
+        Route::post('report-card/generate/bulk', 'AcademicTranscriptController@generateReportCardInBulk')->name('report-card_generate.bulk');
     });
     /**
      * Exams and Student Exams Admin side Routes

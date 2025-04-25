@@ -6,8 +6,9 @@ use App\User;
 use Illuminate\Support\Facades\Hash;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
+use Maatwebsite\Excel\Concerns\SkipsEmptyRows;
 
-class UserImport implements ToModel, WithHeadingRow
+class UserImport implements ToModel, WithHeadingRow, SkipsEmptyRows
 {
     /**
      * @param array $row

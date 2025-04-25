@@ -19,6 +19,7 @@
                            <table class="table" id="datatable-buttons">
                                <thead>
                                <tr>
+                                   <th>student_database_id</th>
                                    <th>Student ID</th>
                                    <th>Name</th>
                                    <th>Course Outline</th>
@@ -29,6 +30,7 @@
                                <tbody>
                                @foreach($students as $student)
                                    <tr>
+                                       <td>{{$student->student->id}}</td>
                                        <td>{{$student->student->student_id}}</td>
                                        <td>{{$student->student->name}}</td>
                                        <td>{{$student->outline->name}}</td>

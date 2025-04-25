@@ -132,8 +132,8 @@
                   @permission('add-marks')
                     <li><a href="{{ route('mark.import.index') }}">Import Marks</a></li>
                     <li><a href="{{ route('mark.create') }}">Add New Marks</a></li>
-                  @endpermission
-                  <li><a href="{{ route('student-marks.index') }}">Individual Student Marks </a></li>
+                    <li><a href="{{ route('additional_data.index') }}">Add Additional Data</a></li>
+                    @endpermission
                 </ul>
               </li>
               {{-- Academic Reports --}}
@@ -141,8 +141,8 @@
                 <a><i class="fa fa-file-pdf-o"></i>Academic Reports<span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
                   @permission('add-marks')
+                    <li><a href="{{ route('student-marks.index') }}">Individual Student Marks </a></li>
                     <li><a href="{{ route('academic.report-card.index') }}">Generate Report Card</a></li>
-                    {{-- <li><a href="javascript:void(0)">Legacy Report Cards</a></li> --}}
                   @endpermission
                 </ul>
               </li>

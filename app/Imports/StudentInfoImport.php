@@ -10,8 +10,9 @@ use Illuminate\Support\Facades\Hash;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Maatwebsite\Excel\Concerns\WithValidation;
+use Maatwebsite\Excel\Concerns\SkipsEmptyRows;
 
-class StudentInfoImport implements ToModel, WithHeadingRow, WithValidation
+class AdditionalData implements ToModel, WithHeadingRow, SkipsEmptyRows, WithValidation
 {
     /**
      * @param array $row

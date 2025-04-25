@@ -8,3 +8,6 @@ In this version the report card has been revised again. Added borders to all the
 
 # Version 2025.04.23
 In this version we added the **name** as a unique entry for the **student_infos** table. Added the student delete option, from the all student list where users with proper authorization cal delete students.  
+
+# Version 2025.04.25
+In this version we completed the report card bulk generation.
