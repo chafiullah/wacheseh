@@ -61,7 +61,7 @@
                         <td>{{ $grade['first_sem'] }}</td>
                         <td>{{ $grade['second_sem'] }}</td>
                         <td>{{ $grade['third_sem'] }}</td>
-                        <td>{{ $grade['average'] }}</td>
+                        <td class="{{ $grade['average'] < 10.00 ? 'text-danger' : '' }}">{{ $grade['average'] }}</td>
                         <td>{{ $grade['coef'] }}</td>
                         <td>{{ $grade['av_coef'] }}</td>
                         <td>{{ $grade['remark'] }}</td>

@@ -235,7 +235,7 @@ class AcademicTranscriptController extends Controller
 
     public function additionalDataStore(Request $request)
     {
-//        return $request->all();
+        //        return $request->all();
         ResultCompliment::updateOrCreate([
             'student_id' => $request->student_id,
             'class_id' => $request->class_id,
@@ -280,5 +280,4 @@ class AcademicTranscriptController extends Controller
         $requestedData = $request->all();
         return view('academic.report_card.bulk', compact('listOfStudents', 'requestedData'));
     }
-
 }
