@@ -25,43 +25,11 @@
                  $marks = \App\Mark::where('semester', $semester)->where('student_id', $student->id)->where('class_id', $class->id)->get();
                 // return $marks;
                 if ($marks->count() > 0) {
-                     /**
-                     * Store Data of this semester in the result table
-                     */
-                    $total_coef = 0;
-                    $sum_n1_c = 0;
-                    $sum_n2_c = 0;
-                    $sum_avg_and_c = 0;
-                    foreach ($marks as $item) {
-                      $sum_n1_c = $sum_n1_c + ($item->n1_mark * $item->course_id->coefficient);
-                      $sum_n2_c = $sum_n2_c + ($item->n2_mark * $item->course_id->coefficient);
-                      $sum_avg_and_c = $sum_avg_and_c + (($item->n1_mark + $item->n2_mark) / 2) * $item->course_id->coefficient;
-                      $total_coef = $total_coef + $item->course_id->coefficient;
-                    }
-                    $part_1 = number_format($sum_n1_c / $total_coef, 2, '.', '');
-                    $part_2 = number_format($sum_n2_c / $total_coef, 2, '.', '');
-                    $total_marks =  $sum_avg_and_c;
-                    $term_average = number_format($sum_avg_and_c / $total_coef, 2, '.', '');
-                    \App\Result::updateOrCreate(
-                      [
-                        'semester' => $semester,
-                        'student_id' => $requestedData->student_id,
-                        'class_id' => $requestedData->class_id,
-                        'year' => $marks->first()->academic_year,
-                      ],
-                      [
-                        'part_1' => $part_1,
-                        'part_2' => $part_2,
-                        'total_marks' => $total_marks,
-                        'total_coef' => $total_coef,
-                        'term_average' => $term_average
-                      ]
-                    );
-                    $results = \App\Result::where('student_id', $requestedData->student_id)->where('class_id', $requestedData->class_id)->where('semester', $semester)->first();
+                    $results = \App\Result::where('student_id', $student->id)->where('class_id', $requestedData->class_id)->where('semester', $semester)->first();
                     $all_results = \App\Result::where('year', $marks->first()->academic_year)->where('class_id', $requestedData->class_id)->where('semester', $semester)->orderBy('term_average', 'desc')->get();
                     $position = 0;
                     foreach ($all_results as $index => $item) {
-                      if ($item->student_id == $requestedData->student_id) {
+                      if ($item->student_id == $student->id) {
                         $position = $index + 1;
                       }
                     }
@@ -97,7 +65,7 @@
                     array_push($annual_grades, $course_grade);
                   }
                 }
-                // return $annual_grades;
+                $results = \App\Result::where('student_id', $student['id'])->where('class_id', $requestedData->class_id)->where('semester', $semester)->first();  
             }
         @endphp
         <div class="row mt-2 p-2">

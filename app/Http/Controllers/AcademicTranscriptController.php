@@ -111,7 +111,48 @@ class AcademicTranscriptController extends Controller
                         array_push($annual_grades, $course_grade);
                     }
                 }
-                // return $annual_grades;
+                //return $annual_grades;
+                // if the student has grades
+                if ($annual_grades) {
+                    $annualTotalMarks = number_format(array_sum(array_column($annual_grades, 'av_coef')), 2);
+                    $annualTotalCoef = array_sum(array_column($annual_grades, 'coef'));
+
+                    Result::updateOrCreate(
+                        [
+                            'semester' => $semester,
+                            'student_id' => $student['id'],
+                            'class_id' => $class->id,
+                            'year' => $marks->first()->academic_year,
+                        ],
+                        [
+                            'part_1' => 0,
+                            'part_2' => 0,
+                            'total_marks' => $annualTotalMarks,
+                            'total_coef' => $annualTotalCoef,
+                            'term_average' => number_format($annualTotalMarks / $annualTotalCoef, 2)
+                        ]
+                    );
+                    $all_results = Result::where('year', $marks->first()->academic_year)->where('class_id', $request->class_id)->where('semester', $semester)->orderBy('term_average', 'desc')->get();
+                    $position = 0;
+                    foreach ($all_results as $index => $item) {
+                        if ($item->student_id == $student['id']) {
+                            $position = $index + 1;
+                        }
+                    }
+                    // return $position;
+                    // remember just for annual we are using part_1 as the position
+                    Result::updateOrCreate(
+                        [
+                            'semester' => $semester,
+                            'student_id' => $student['id'],
+                            'class_id' => $class->id,
+                            'year' => $marks->first()->academic_year,
+                        ],
+                        [
+                            'part_1' => $position
+                        ]
+                    );
+                }
             }
         }
         toastr()->success('Results are refreshed successfully..', 'success');
@@ -135,6 +176,7 @@ class AcademicTranscriptController extends Controller
             $student = StudentInfo::find($request->student_id);
             $class = Department::find($request->class_id);
             $semester = $request->semester;
+            // for semesters: 1,2,3
             if ($semester != config('constant.annual')) {
                 $marks = Mark::where('semester', $request->semester)->where('student_id', $request->student_id)->where('class_id', $request->class_id)->get();
                 // return $marks;
@@ -186,6 +228,10 @@ class AcademicTranscriptController extends Controller
                 return view('academic.report_card.report_card', compact('additional_data', 'marks', 'class', 'student', 'semester', 'results', 'position'));
             } else {
                 $courses = Helper::get_listof_subjects($student->id, $class->id)->pluck('course_id')->toArray();
+                if ($courses == []) {
+                    toastr()->error('The system did not find any course records of this student for this academic year and class..', 'Error');
+                    return redirect()->back();
+                }
                 $annual_grades = [];
                 foreach ($courses as $course_id) {
                     $marks = Mark::whereIn('semester', [config('constant.sem1'), config('constant.sem2'), config('constant.sem3')])->where('student_id', $student->id)->where('class_id', $class->id)->where('course_id', $course_id)->latest()->get();
@@ -215,8 +261,45 @@ class AcademicTranscriptController extends Controller
                         array_push($annual_grades, $course_grade);
                     }
                 }
+                $annualTotalMarks = number_format(array_sum(array_column($annual_grades, 'av_coef')), 2);
+                $annualTotalCoef = array_sum(array_column($annual_grades, 'coef'));
+                Result::updateOrCreate(
+                    [
+                        'semester' => $semester,
+                        'student_id' => $request->student_id,
+                        'class_id' => $request->class_id,
+                        'year' => $marks->first()->academic_year,
+                    ],
+                    [
+                        'part_1' => 0,
+                        'part_2' => 0,
+                        'total_marks' => $annualTotalMarks,
+                        'total_coef' => $annualTotalCoef,
+                        'term_average' => number_format($annualTotalMarks / $annualTotalCoef, 2)
+                    ]
+                );
+                $results = Result::where('student_id', $request->student_id)->where('class_id', $request->class_id)->where('semester', $semester)->first();
+                $all_results = Result::where('year', $marks->first()->academic_year)->where('class_id', $request->class_id)->where('semester', $semester)->orderBy('term_average', 'desc')->get();
+                $position = 0;
+                foreach ($all_results as $index => $item) {
+                    if ($item->student_id == $request->student_id) {
+                        $position = $index + 1;
+                    }
+                }
+                // remember just for annual we are using part_1 as the position
+                Result::updateOrCreate(
+                    [
+                        'semester' => $semester,
+                        'student_id' => $request->student_id,
+                        'class_id' => $request->class_id,
+                        'year' => $marks->first()->academic_year,
+                    ],
+                    [
+                        'part_1' => $position
+                    ]
+                );
                 // return $annual_grades;
-                return view('academic.report_card.report_card', compact('additional_data', 'class', 'student', 'semester', 'annual_grades'));
+                return view('academic.report_card.report_card', compact('additional_data', 'class', 'student', 'semester', 'annual_grades', 'results', 'position'));
             }
         } catch (\Throwable $th) {
             return $th->getMessage();
