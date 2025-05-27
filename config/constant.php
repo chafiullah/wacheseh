@@ -15,7 +15,7 @@ return [
    'heading1' => 'First Term Report Card',
    'heading2' => 'Second Term Report Card',
    'heading3' => 'Third Term Report Card',
-   'annual_heading' => 'ANNUAL REPORT SHEET',
+   'annual_heading' => 'ANNUAL REPORT CARD',
    'series' => ['Arts', 'Science', 'A1', 'A2', 'A3', 'A4', 'A5', 'S1', 'S2', 'S3', 'S4', 'S5', 'Commercial', 'Accounting', 'N/A'],
    'id_heading' => 'WA-BAS'
 ];
